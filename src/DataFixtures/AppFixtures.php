@@ -10,15 +10,17 @@ class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        /* Création d'un tableau d'objets Contact */
-        $contacts = [
-            $this->createContact('Dupont', 'Jean', '0606060606'),
-            $this->createContact('Durand', 'Paul', '0606060606'),
-            $this->createContact('Toto', 'Chris', '0606060606'),
-            $this->createContact('Titi', 'Rachel', '0606060606'),
-        ];
+        /* On utilise Faker pour générer des données */
+        $faker = \Faker\Factory::create('fr_FR');
 
-        foreach ($contacts as $contact) {
+        /* On crée 50 contacts */
+        for ($i = 0; $i < 50; $i++) {
+            $contact = $this->createContact(
+                $faker->lastName(),
+                $faker->firstName(),
+                $faker->phoneNumber()
+                );
+
             $manager->persist($contact);
         }
 
