@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AnnuaireController!{% endblock %}
+
+{% block body %}
+    <div class="container"></div>
+        {# On récupère les contacts dee la base de données #}
+        {% for contact in contacts %}
+            <div class="card shadow m-4">
+                <div class="card-body p4 m2">
+                    <h5 class="card-title">{{ contact.nom }} {{ contact.prenom }}</h5>
+                    <p class="card-text">{{ contact.telephone }}</p>
+                </div>
+            </div>
+        {% endfor %}
+{% endblock %}
