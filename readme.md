@@ -13,4 +13,6 @@ composer require --dev orm-fixtures.
 Installer Faker PHP
 composer require fakerphp/faker
 
+Amusez vous bien !
+
 
